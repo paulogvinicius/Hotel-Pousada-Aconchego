@@ -578,6 +578,31 @@ nav ul li a:hover {
         text-align: left;    /* Ou center, se preferir o estilo centralizado no mobile */
     }
 
+   /* Garante que os itens fiquem um abaixo do outro */
+    .accommodations-flex {
+        flex-direction: column !important; 
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* FORÇA o aparecimento do slider */
+    .accommodations-slider {
+        display: block !important; /* Garante que não esteja com display: none */
+        width: 100% !important;
+        max-width: 100%;
+        height: 300px; /* IMPORTANTE: No mobile, você PRECISA de uma altura fixa ou o slider some */
+        margin: 20px auto 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Garante que a imagem dentro do slider ocupe todo o espaço */
+    .slide {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
    
 
     /* Footer */
