@@ -1,0 +1,594 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES
+   ========================================================================== */
+:root {
+    --verde-principal: #5F8F6B;
+    --verde-claro: #7BAA85;
+    --verde-escuro: #3F6F52;
+     --dourado-principal: #D4AF37; 
+     --dourado-claro: #F9E272;     /* Brilhos e reflexos */
+    --dourado-escuro: #8B6914; 
+
+    --preto-principal: #000000;
+
+    --branco-puro: #FFFFFF;
+    --cinza-suave: #F5F5F5;
+    --cinza-cabo: #4A4A4A;
+
+    --bege-natural: #E8E2D6;
+
+    --transicao: all 0.4s ease;
+}
+
+/* ==========================================================================
+   RESET E BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--cinza-cabo);
+    background-color: var(--branco-puro);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   COMPONENTES GERAIS (BOTÕES E ANIMAÇÕES)
+   ========================================================================== */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: var(--transicao);
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.btn-filled {
+    background: linear-gradient(135deg, var(--dourado-escuro), var(--dourado-principal));
+    color: var(--branco-puro);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: var(--transicao);
+    box-shadow: 0 4px 15px rgba(139, 105, 20, 0.3);
+    display: inline-block;
+}
+
+.btn-filled:hover {
+    background: linear-gradient(135deg, var(--dourado-principal), var(--dourado-claro));
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(139, 105, 20, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--dourado-principal);
+    color: var(--dourado-principal);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transicao);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.btn-outline:hover {
+    background: var(--dourado-principal);
+    color: var(--preto-fundo);
+    box-shadow: 0 0 15px var(--dourado-escuro);
+}
+
+/* ==========================================================================
+   HEADER (TOPO)
+   ========================================================================== */
+.main-header {
+    background: var(--verde-principal);
+    padding: 20px 0;
+    border-bottom: 2px solid var(--dourado-escuro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    filter: brightness(1.2);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--branco-puro);
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: var(--transicao);
+}
+
+nav ul li a:hover {
+    color: var(--dourado-claro);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+    background: url('imagens/banner.png') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text h1 {
+    color: var(--branco-puro);
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.hero-text h1 span {
+    color: var(--dourado-principal);
+    font-weight: 300;
+    display: block;
+}
+
+.hero p {
+    color: #FFFFFF;
+}
+
+.since {
+    color: var(--dourado-claro);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   ESPECIALIDADES (SERVIÇOS)
+   ========================================================================== */
+.specialties {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--preto-fundo);
+}
+
+.red-line { /* Régua Dourada */
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--dourado-escuro), var(--dourado-claro));
+    margin: 15px auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.service-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9; 
+    background-color: var(--preto-fundo);
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: grayscale(20%);
+    transition: var(--transicao);
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.service-card:hover .card-img img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.accent-bar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: linear-gradient(to bottom, var(--dourado-escuro), var(--dourado-claro), var(--dourado-escuro));
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    color: var(--preto-fundo);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: var(--cinza-cabo);
+}
+
+.center-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+    padding-bottom: 20px;
+}
+
+/* ==========================================================================
+   SECTION "SOBRE" (SOBRE NÓS)
+   ========================================================================== */
+.about {
+    padding: 100px 0;
+}
+
+.about-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--preto-fundo);
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: var(--cinza-cabo);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rounded-fachada {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--dourado-escuro);
+    transition: var(--transicao);
+}
+
+.rounded-fachada:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   SECTION ACOMODAÇÕES
+   ========================================================================== */
+.accommodations {
+    background-color: var(--verde-principal); /* Azul conforme referência */
+    padding: 100px 0;
+    color: var(--branco-puro);
+}
+
+.accommodations-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.accommodations-text {
+    flex: 1;
+}
+
+.accommodations-text h2 {
+    font-size: 2.5rem;
+    color: var(--branco-puro); /* Azul claro do título */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.accommodations-text p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* Slider Config */
+.accommodations-slider {
+    flex: 1;
+    position: relative;
+    max-width: 700px;
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Setas */
+.accommodations-slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.accommodations-slider button:hover {
+    background: rgba(255,255,255,0.5);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .accommodations-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .accommodations {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .accommodations-slider {
+        width: 100%;
+        height: 300px;
+    }
+    .btn-accommodations {
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   FOOTER (RODAPÉ LUXO)
+   ========================================================================== */
+.main-footer {
+    background-color: var(--preto-principal);
+    color: var(--branco-puro);
+    padding: 80px 0 40px;
+    border-top: 4px solid var(--dourado-principal);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.2fr;
+    gap: 60px;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--branco-puro);
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    transition: var(--transicao);
+}
+
+.footer-links a:hover {
+    color: var(--dourado-principal);
+    padding-left: 10px;
+}
+
+.footer-contact h3 {
+    color: var(--dourado-principal);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.footer-contact p {
+    color: #bbb;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.map-link {
+    display: inline-block;
+    color: var(--dourado-principal);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    border-bottom: 1px solid transparent;
+    transition: var(--transicao);
+}
+
+.map-link:hover {
+    color: var(--dourado-claro);
+    border-bottom: 1px solid var(--dourado-claro);
+}
+
+
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================================================== */
+
+/* Tablets e Desktops Pequenos */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    /* Header */
+    .header-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Hero */
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Serviços */
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.1rem; /* Título menor para não ocupar a tela toda */
+        margin-bottom: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 coluna: cards ficam um abaixo do outro */
+        gap: 30px;
+    }
+
+    .service-card {
+        max-width: 450px; /* Garante que o card não fique largo demais em telas médias */
+        margin: 0 auto;  /* Centraliza o card na tela */
+    }
+
+    /* Ajuste do botão de orçamento no mobile */
+    .center-btn {
+        margin-top: 50px;
+    }
+
+    /* Sobre */
+    .about {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .about-flex {
+        flex-direction: column-reverse;
+        gap: 30px;
+        text-align: center;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    .about-img {
+        justify-content: center;
+    }
+
+    /* Ajuste da Seção Sobre no Celular */
+    .about-text h2 {
+        font-size: 1.1rem; /* Diminui o título para não quebrar em muitas linhas */
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .about-text p {
+        font-size: 0.70rem; /* Fonte um pouco menor para caber mais conteúdo */
+        line-height: 1.6;   /* Reduz o espaçamento entre linhas para o texto não "esticar" demais */
+        margin-bottom: 12px;
+        text-align: left;    /* Ou center, se preferir o estilo centralizado no mobile */
+    }
+
+   
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+}
