@@ -579,28 +579,45 @@ nav ul li a:hover {
     }
 
    /* Garante que os itens fiquem um abaixo do outro */
+
+    /* 1. Força a coluna para que o slider não fique esmagado na lateral */
     .accommodations-flex {
-        flex-direction: column !important; 
+        display: flex !important;
+        flex-direction: column !important;
         text-align: center;
-        gap: 30px;
+        padding: 0 20px;
     }
 
-    /* FORÇA o aparecimento do slider */
-    .accommodations-slider {
-        display: block !important; /* Garante que não esteja com display: none */
+    /* 2. Garante que o texto ocupe toda a largura */
+    .accommodations-text {
         width: 100% !important;
-        max-width: 100%;
-        height: 300px; /* IMPORTANTE: No mobile, você PRECISA de uma altura fixa ou o slider some */
-        margin: 20px auto 0 auto;
-        position: relative;
-        overflow: hidden;
+        margin-bottom: 30px;
     }
 
-    /* Garante que a imagem dentro do slider ocupe todo o espaço */
+    /* 3. FORÇA A ALTURA E LARGURA DO SLIDER */
+    .accommodations-slider {
+        display: block !important; /* Certifica que não está oculto */
+        width: 100% !important;    /* Ocupa a largura total do celular */
+        min-height: 300px !important; /* Altura mínima obrigatória */
+        height: 300px !important;    /* Altura fixa para teste */
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* 4. Garante que as imagens dentro do slider apareçam */
     .slide {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        object-fit: cover !important;
+    }
+
+    /* 5. Ajusta o botão para centralizar no mobile */
+    .btn-accommodations {
+        margin: 0 auto;
     }
 
    
