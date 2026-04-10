@@ -581,41 +581,51 @@ nav ul li a:hover {
    /* Garante que os itens fiquem um abaixo do outro */
 
     /* 1. Força a coluna para que o slider não fique esmagado na lateral */
+    .accommodations {
+        padding: 60px 0; /* Diminui o padding vertical no mobile */
+        width: 100%;
+        overflow: hidden; /* Corta qualquer transbordo acidental */
+    }
+
+    /* Ajusta o container para respeitar as margens */
     .accommodations-flex {
         display: flex !important;
         flex-direction: column !important;
-        text-align: center;
-        padding: 0 20px;
+        width: 100% !important;
+        max-width: 100vw !important; /* Limita à largura da janela */
+        padding: 0 20px !important; /* Margem interna de segurança */
+        gap: 30px;
+        margin: 0 auto;
+        box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
     }
 
-    /* 2. Garante que o texto ocupe toda a largura */
     .accommodations-text {
         width: 100% !important;
-        margin-bottom: 30px;
+        box-sizing: border-box;
     }
 
-    /* 3. FORÇA A ALTURA E LARGURA DO SLIDER */
+    .accommodations-text h2 {
+        font-size: 1.8rem; /* Título um pouco menor no mobile */
+    }
+
+    /* Ajusta o slider para não ultrapassar a margem */
     .accommodations-slider {
-        display: block !important; /* Certifica que não está oculto */
-        width: 100% !important;    /* Ocupa a largura total do celular */
-        min-height: 300px !important; /* Altura mínima obrigatória */
-        height: 300px !important;    /* Altura fixa para teste */
+        display: block !important;
+        width: 100% !important; /* Ocupa 100% do que o PAI permite (que já tem 20px de padding) */
+        height: 250px !important; /* Altura um pouco menor para não ocupar a tela toda */
         max-width: 100% !important;
+        border-radius: 20px; /* Bordas um pouco menores no mobile */
         margin: 0 auto !important;
-        position: relative !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        box-sizing: border-box;
     }
 
-    /* 4. Garante que as imagens dentro do slider apareçam */
     .slide {
         width: 100% !important;
         height: 100% !important;
-        display: block !important;
-        object-fit: cover !important;
+        object-fit: cover;
     }
 
-    /* 5. Ajusta o botão para centralizar no mobile */
+    /* Centraliza o botão */
     .btn-accommodations {
         margin: 0 auto;
     }
