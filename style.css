@@ -529,16 +529,16 @@ nav ul li a:hover {
 
     /* Sobre */
     .about {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .about-flex {
         flex-direction: column-reverse;
         gap: 30px;
         text-align: center;
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
     .about-img {
         justify-content: center;
@@ -560,47 +560,66 @@ nav ul li a:hover {
 
    /* Garante que os itens fiquem um abaixo do outro */
 
-    /* 1. Section e Container */
-    /* 1. Forçar a seção e o container a aparecerem, ignorando o delay do reveal */
-    .accommodations, 
+   /* 1. Forçar a seção e o container a aparecerem, ignorando o delay do reveal */
+  .accommodations, 
     .accommodations-flex.reveal {
         opacity: 1 !important;
         transform: none !important;
         visibility: visible !important;
         display: block !important;
         width: 100% !important;
-        padding: 40px 0 !important;
         overflow: hidden !important;
+        
+    }
+
+    .accommodations {
+        padding-left: 1rem;
+        padding-left: 1rem;
     }
 
     .accommodations-flex {
         display: flex !important;
         flex-direction: column !important;
         padding: 0 20px !important;
-        gap: 20px !important;
+        /* Reduzi o gap para controlarmos o espaço via margem no botão */
+        gap: 10px !important; 
         box-sizing: border-box !important;
     }
 
-    /* 2. Texto centralizado e dentro da margem */
+    /* 1. Texto centralizado */
     .accommodations-text {
         width: 100% !important;
         text-align: center !important;
         box-sizing: border-box !important;
     }
 
-    /* 3. O SLIDER: Ocupando a largura exata do container pai */
+    /* 2. Espaço entre o último parágrafo e o botão */
+    .accommodations-text p:last-of-type {
+        margin-bottom: 30px !important;
+    }
+
+    /* 3. O BOTÃO: Margem inferior para empurrar o slider */
+    .btn-accommodations {
+        display: flex !important;
+        margin: 0 auto 50px auto !important; /* O '50px' cria o espaço entre botão e imagem */
+        max-width: 100% !important;
+        justify-content: center;
+    }
+
+    /* 4. O SLIDER: Ajustado para não colar no botão */
     .accommodations-slider {
         display: block !important;
         position: relative !important;
         width: 100% !important; 
-        height: 250px !important; /* Altura fixa para garantir que o container exista */
+        height: 280px !important; /* Altura um pouco maior para destaque */
         margin: 0 auto !important;
         border-radius: 15px !important;
         overflow: hidden !important;
-        background: #001a57; /* Cor de teste para ver se o bloco aparece */
+        background: #001a57;
+        /* Removemos margens conflitantes aqui */
     }
 
-    /* 4. AS IMAGENS: Forçar a exibição da que tiver a classe active */
+    /* 5. AS IMAGENS */
     .slide {
         position: absolute !important;
         top: 0 !important;
@@ -608,23 +627,15 @@ nav ul li a:hover {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        opacity: 0 !important; /* Esconde todas por padrão */
+        opacity: 0 !important;
         display: block !important;
         transition: opacity 0.5s ease !important;
     }
 
     .slide.active {
-        opacity: 1 !important; /* MOSTRA apenas a ativa */
+        opacity: 1 !important;
         z-index: 2 !important;
     }
-
-    /* 5. Botão sem transbordar */
-    .btn-accommodations {
-        margin: 15px auto !important;
-        max-width: 100% !important;
-    }
-
-   
 
     /* Footer */
     .footer-grid {
